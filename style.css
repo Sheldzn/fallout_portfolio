@@ -5,7 +5,12 @@
     --screen-green: #08150c;
     --screen-secondry: #112f1a;
     --neon-green: #18DC0C;
+    --neon-blue: rgb(46,207,255);
+    --neon-amber: rgb(255,182,66);
+    --neon-white: rgb(228, 255, 255);
     --font: 'Monofonto';
+    --active-primary-color: var(--neon-green);
+    --active-secondry-color: var(--screen-secondry);
 }
 
 @font-face {
@@ -40,6 +45,7 @@ time, mark, audio, video {
 }
 * {
     font-family: var(--font);
+    color: var(--active-primary-color);
 }
 body {
     max-height: 100vh;
@@ -49,8 +55,27 @@ body {
     overflow: hidden;
 }
 main {
-    padding: 60px 20px;
     height: 100%;
+}
+li {
+    list-style-type: circle;
+}
+.colors {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+}
+.colors button {
+    background-color: transparent;
+    border: 0;
+    font-size: 20px;
+    cursor: pointer;
+}
+.header {
+    position: absolute;
+    padding-bottom: 15px;
+    background-color: var(--screen-green);
+    z-index: 2;
 }
 ::-webkit-scrollbar {
     width: 6px;
@@ -59,13 +84,13 @@ main {
     background: var(--screen-secondry);
 }
 ::-webkit-scrollbar-thumb {
-    background: var(--neon-green);
+    background: var(--active-primary-color);
 }
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
 .neon-green {
-    color: var(--neon-green);
+    color: var(--active-primary-color);
 }
 .main-content {
     background-color: #000;
@@ -106,6 +131,7 @@ main {
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    position: relative;
 }
 .navbar {
     display: flex;   
@@ -121,7 +147,7 @@ main {
     display: block;
     width: calc(100% + 50px);
     height: 2px;
-    background-color: var(--neon-green);
+    background-color: var(--active-primary-color);
     bottom: 0;
     right: 0;
     left: -50px;
@@ -132,7 +158,7 @@ main {
     position: relative;
     background-color: transparent;
     border: 0;
-    color: var(--neon-green);
+    color: var(--active-primary-color);
     text-transform: uppercase;
     font-size: 24px;
     border-bottom: 2px solid transparent;
@@ -150,8 +176,8 @@ main {
     left: -2px;
     width: 10px;
     height: 20px;
-    border-top: 2px solid var(--neon-green);
-    border-left: 2px solid var(--neon-green);
+    border-top: 2px solid var(--active-primary-color);
+    border-left: 2px solid var(--active-primary-color);
 }
 .nav-item.active:after {
     content: "";
@@ -160,48 +186,60 @@ main {
     right: -2px;
     width: 10px;
     height: 20px;
-    border-top: 2px solid var(--neon-green);
-    border-right: 2px solid var(--neon-green);
+    border-top: 2px solid var(--active-primary-color);
+    border-right: 2px solid var(--active-primary-color);
 }
 .slide-half-left {
-    max-width: 100%;
+    max-width: 480px;
+    width: 100%;
     text-align: center;
     display: flex;
     flex-direction: column;
     gap: 30px; 
+    padding-top: 20%;
 }
 .slide-half-right { 
     background:
-    linear-gradient(to right, var(--neon-green) 2px, transparent 2px) 0 0,
-    linear-gradient(to right, var(--neon-green) 2px, transparent 2px) 0 100%,
-    linear-gradient(to left, var(--neon-green) 2px, transparent 2px) 100% 0,
-    linear-gradient(to left, var(--neon-green) 2px, transparent 2px) 100% 100%,
-    linear-gradient(to bottom, var(--neon-green) 2px, transparent 2px) 0 0,
-    linear-gradient(to bottom, var(--neon-green) 2px, transparent 2px) 100% 0,
-    linear-gradient(to top, var(--neon-green) 2px, transparent 2px) 0 100%,
-    linear-gradient(to top, var(--neon-green) 2px, transparent 2px) 100% 100%;
+    linear-gradient(to right, var(--active-primary-color) 2px, transparent 2px) 0 0,
+    linear-gradient(to right, var(--active-primary-color) 2px, transparent 2px) 0 100%,
+    linear-gradient(to left, var(--active-primary-color) 2px, transparent 2px) 100% 0,
+    linear-gradient(to left, var(--active-primary-color) 2px, transparent 2px) 100% 100%,
+    linear-gradient(to bottom, var(--active-primary-color) 2px, transparent 2px) 0 0,
+    linear-gradient(to bottom, var(--active-primary-color) 2px, transparent 2px) 100% 0,
+    linear-gradient(to top, var(--active-primary-color) 2px, transparent 2px) 0 100%,
+    linear-gradient(to top, var(--active-primary-color) 2px, transparent 2px) 100% 100%;
     background-repeat: no-repeat;
     background-size: 20px 20px;
-    max-width: 100%;
-    padding: 20px 0 20px 20px;
+    max-width: 800px;
+    width: 100%;
+    padding: 20px 15px 20px 20px;
     display: flex;
+    height: 90%;
 }
 .inner-right-content {
-    max-height: 300px;
     overflow-y: auto;
 }
 .slide-inner {
     display: grid;
-    grid-template-columns: 30% 50%;
+    grid-template-columns: 1fr 1fr;
     justify-content: space-between;
     height: 100%;
+}
+.inner-inner {
+    padding: 6px 20px;
 }
 .footer-inner {
     display: flex;
     gap: 8px;
 }
+.footer {
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    background-color: var(--screen-green);
+}
 .age {
-    color: var(--neon-green);
+    color: var(--active-primary-color);
     text-transform: uppercase;
     background-color: var(--screen-secondry);
     padding: 5px 20px;
@@ -212,7 +250,7 @@ main {
 .bar {
     position: relative;
     height: 15px;
-    border: 2px solid var(--neon-green);
+    border: 2px solid var(--active-primary-color);
     max-width: 100%;
     width: 150px;
 }
@@ -223,7 +261,7 @@ main {
     left: 0;
     bottom: 0;
     width: 15%;
-    background-color: var(--neon-green);
+    background-color: var(--active-primary-color);
     display: block;
 }
 
@@ -237,7 +275,7 @@ main {
 .heading {
     font-size: 30px;
     text-transform: uppercase;
-    color: var(--neon-green);
+    color: var(--active-primary-color);
     letter-spacing: 2px;
     margin-bottom: 25px;
 }
@@ -265,7 +303,7 @@ main {
 }
 .tab button {
     background-color: transparent;
-    color: var(--neon-green);
+    color: var(--active-primary-color);
     float: left;
     border: none;
     outline: none;
@@ -274,11 +312,11 @@ main {
     transition: 0.4s;
 }
 .tab button:hover {
-    background-color: var(--neon-green);
+    background-color: var(--active-primary-color);
     color: var(--screen-green);
   }
 .tab button.active {
-    background-color: var(--neon-green);
+    background-color: var(--active-primary-color);
     color: var(--screen-green);
 }
 .tabcontent {
@@ -286,7 +324,6 @@ main {
     padding: 6px 20px;
     border-top: none;
     overflow-y: auto;
-    max-height: 400px;
     margin: auto;
 }
 .tabcontent {
@@ -304,4 +341,79 @@ main {
 .body-text {
     font-size: 18px;
     line-height: 130%;
+}
+.neon-blue img {
+    filter: hue-rotate(70deg);
+}
+.neon-amber img {
+    filter: hue-rotate(270deg)
+}
+.neon-white img {
+    filter: saturate(0);
+}
+
+
+@media screen and (max-width: 1200px) {
+    .slide-inner {
+        display: block;
+    }
+    .slide-inner {
+        overflow: auto;
+    }
+    .slide-half-left, .slide-half-right {
+        max-width: 95%;
+        margin: 0 auto;
+    }
+    .slide-half-left {
+        padding-top: 15%;
+        padding-bottom: 5%;
+    }
+    .slide-half-right {
+        margin-bottom: 70px;
+        height: auto;
+    }
+    .header {
+        width: 97%;
+    }
+    .footer {
+        width: 97%;
+        padding-top: 20px;
+    }
+    .inner-right-content {
+        overflow: hidden;
+        max-height: 100% !important;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .slide-half-right {
+        margin-bottom: 160px;
+    }
+    .nav-item {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+    .body-text, .age {
+        font-size: 14px;
+    }
+    .footer-inner {
+        flex-direction: column;
+
+    }
+    .age {
+        width: 100%;
+    }
+    .age div {
+        width: 100%;
+        text-align: center;
+    }
+    .level {
+        justify-content: center;
+    }
+    .level div {
+        width: auto;
+    }
+    .level .bar {
+        width: 150px;
+    }
 }
