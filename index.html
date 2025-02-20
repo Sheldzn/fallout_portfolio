@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <title>Web Developer</title>
+</head>
+<body id="body" class="neon-green">
+    <div class="main-content">
+        <div class="pip-outer">
+            <div class="pip-inner">
+                <header class="header">
+                    <nav class="navbar">
+                        <div class="nav-inner">
+                            <button class="nav-item active" data-index="0">Char</button>
+                            <button class="nav-item" data-index="1">Exp</button>
+                            <button class="nav-item" data-index="2">Stat</button>
+                            <button class="nav-item" data-index="3">Stat</button>
+                        </div>
+                    </nav>
+                </header>
+                <main>
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">                               
+                                <div class="slide-inner">
+                                    <div class="slide-half-left">                                       
+                                        <img class="generic-pip" src="./images/PipBoy Developer Standard Transparent Optimized.webp">
+                                        <div class="body-text">Sheldon Jenkins: Full Stack Developer</div>
+                                    </div>
+                                    <div class="slide-half-right">
+                                        <div class="inner-right-content">
+                                            <h2 class="heading">About</h2>
+                                            <p class="body-text">I am a results-driven Full Stack Developer with over 8 years of experience delivering bespoke eCommerce solutions. Coming from a certified Shopify Expert Agency and current Shopify Partner with a proven track record of leading development teams, creating custom Shopify themes, and integrating third-party apps and APIs to optimize performance. Adept at solving complex problems, adapting to new technologies, and ensuring seamless user experiences. Passionate about creating visually stimulating, high-performance eCommerce stores that drive business growth.
+                                            <br/><br/>An inquisitive mind, constantly learning new languages and skills and experimenting with new tools to keep me at the top of my game. Currently I am learning SQL and the basics of App Development and French.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slide-inner">
+                                    <div class="slide-half-left">        
+                                        <div class="tab slide-nav">
+                                            <button class="tablinks active" onclick="openCity(event, 'Lead')">Lead Developer</button>
+                                            <button class="tablinks" onclick="openCity(event, 'Senior')">Senior Developer</button>
+                                            <button class="tablinks" onclick="openCity(event, 'Junior')">Junior Developer</button>
+                                        </div>                                      
+                                    </div>
+                                    <div class="slide-half-right">
+                                        <div id="Lead" class="tabcontent active" style="display: block;">
+                                            <h2 class="heading">Company: OK_Alpha Geek</h2>
+                                            <img src="./images/PIP_Senior.webp">
+                                            <ul>
+                                                <li>Spearhead the development side of a digital agency specializing in Shopify and Webflow, delivering tailored eCommerce and marketing solutions.</li>
+                                                <li>Developed custom Shopify themes, optimizing the use of Shopify's Dawn theme for faster turnaround times.</li>
+                                                <li>Proficiently utilized Webflow and WordPress, expanding the agency's platform capabilities.</li>
+                                                <li>Implemented advanced analytics tools like Google Analytics, Microsoft Clarity and Hotjar to improve Shopify Plus store performance.</li>
+                                                <li>Successfully managed multiple projects simultaneously, ensuring on-time delivery and high client satisfaction.</li>
+                                            </ul>
+                                        </div>                                  
+                                        <div id="Senior" class="tabcontent" style="display: none;"> 
+                                            <h2 class="heading">Company: TDMC</h2>                                           
+                                            <img src="./images/PIP_Senior.webp">
+                                            <ul>
+                                                <li>Led a team of developers, providing training on Shopify and managing day-to-day eCommerce operation.</li>
+                                                <li>Achieved Shopify Partner certification, handling diverse client requests and complex integrations.</li>
+                                                <li>Integrated third-party apps, APIs, and payment gateways (Shopify POS, shipping providers) to enhance store functionality.</li>
+                                                <li>Built and custom coded email marketing templates using tools like Mailchimp, Klaviyo, and Omnisend.</li>
+                                            </ul>
+                                        </div>                                    
+                                        <div id="Junior" class="tabcontent" style="display: none;">
+                                            <h2 class="heading">Company: TDMC</h2> 
+                                            <img src="./images/Junior_Developer.webp">
+                                            <ul>
+                                                <li>Transitioned from WordPress/WooCommerce to Shopify, managing store operations, including product uploads and order processing.</li>
+                                                <li>Gained hands-on experience coding emailers and templates for various brands, laying the groundwork for Shopify development expertis.</li>
+                                                <li>Supported the development and maintenance of multiple Shopify stores, rapidly growing within the ecosystem.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">Slide 3 Content</div>
+                        </div>
+                    </div>
+                </main>
+                <footer class="footer">
+                    <div class="footer-inner">
+                        <div class="age">
+                            <div>HP 19/93</div>
+                        </div>
+                        <div class="age">
+                            <div>Level 32</div>
+                            <div class="bar"></div>
+                        </div>
+                        <div class="age">
+                            <div>AP 01/27</div>
+                        </div>
+                    </div>
+                </footer>
+            </div>          
+        </div>
+    </main> 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
