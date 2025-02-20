@@ -8,16 +8,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     tabButtons.forEach((button, index) => {
         button.addEventListener("click", function () {
-            // Remove active class from all buttons
+            
             tabButtons.forEach(btn => btn.classList.remove("active"));
             this.classList.add("active");
-
-            // Change Swiper slide
+          
             swiper.slideTo(index);
         });
     });
 
-    // Sync tabs with Swiper slide change
+    
     swiper.on("slideChange", function () {
         tabButtons.forEach(btn => btn.classList.remove("active"));
         tabButtons[swiper.activeIndex].classList.add("active");
@@ -44,19 +43,19 @@ function openCity(evt, cityName) {
 
   
   function updateMaxHeight() {
-    const mainElement = document.querySelector('main'); // Get the single <main> element
-    const rightContents = document.querySelectorAll('.inner-right-content'); // Get all .inner-right-content elements
+    const mainElement = document.querySelector('main'); 
+    const rightContents = document.querySelectorAll('.inner-right-content'); 
   
     if (mainElement) {
-      const mainHeight = mainElement.clientHeight; // Get main's height
+      const mainHeight = mainElement.clientHeight; 
   
       rightContents.forEach(content => {
-        content.style.maxHeight = `${mainHeight}px`; // Apply height to each .inner-right-content
+        content.style.maxHeight = `${mainHeight}px`; 
       });
     }
   }
   
-  // Run on load and resize
+
   window.addEventListener('load', updateMaxHeight);
   window.addEventListener('resize', updateMaxHeight);
   
