@@ -418,3 +418,24 @@ li {
         width: 150px;
     }
 }
+
+@media screen and (max-width: 500px) {
+     body {
+	padding: 0;
+     }
+     .main-content {
+        padding: 0;
+     }
+     .nav-item {
+	font-size: 12px;
+     }
+     .heading {
+	font-size: 20px;
+     }
+     .tabcontent li {
+	font-size: 14px;
+     }
+     .header, .footer {
+	top: -2px;
+     }
+}
