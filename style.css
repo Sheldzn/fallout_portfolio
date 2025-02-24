@@ -218,6 +218,7 @@ li {
 }
 .inner-right-content {
     overflow-y: auto;
+    width: 100%;
 }
 .slide-inner {
     display: grid;
@@ -268,7 +269,7 @@ li {
 .generic-pip {
     display: block;
     width: 100%;
-    max-width: 300px;
+    max-width: clamp(120px, 25.3vh, 300px);
     margin: 0 auto;
     pointer-events: none;
 }
