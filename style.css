@@ -435,7 +435,7 @@ li {
      .tabcontent li {
 	font-size: 14px;
      }
-     .header, .footer {
+     .footer {
 	top: -2px;
      }
 }
